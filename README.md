@@ -250,28 +250,21 @@ try {
 ### rs에 값이 있다면 id와 pw 모두 제대로 입력한 것이므로 로그인 성공 메시지를 띄워주고 관리자 로그인창은 닫기 그런다음 관리자 화면 띄우기 아니면 로그인 실패 메시지 띄우기
 ``` java
 if(rs.next()) {
-				Alert alert = new Alert(AlertType.INFORMATION);
-				alert.setHeaderText("성공");
-				alert.setTitle("로그인 성공 여부");
-				alert.setContentText("로그인에 성공하였어요");
-				alert.show();
-				Stage stage = (Stage)CloseButton.getScene().getWindow();
-				stage.close();
-				CloseButtonAction(event);
-				
-				Parent root = FXMLLoader.load(getClass().getResource("admindb.fxml"));
-				Stage stage1 = new Stage();
-				Scene scene = new Scene(root);
-				stage1.setScene(scene);
-				stage1.show();
-        
-        }else{
-				Alert alert = new Alert(AlertType.INFORMATION);
-				alert.setHeaderText("실패");
-				alert.setTitle("로그인 성공 여부");
-				alert.setContentText("로그인에 실패하였어요");
-				alert.show();
-			}
+					try {
+						Parent root = FXMLLoader.load(getClass().getResource("Admindb.fxml"));
+						Scene scene = new Scene(root);
+						Stage stage = new Stage();
+						stage.setScene(scene);
+						stage.show();
+					} catch(Exception e) {
+						e.printStackTrace();
+					}
+			    
+				}else {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setContentText("틀렸습니다");
+					alert.show();
+				}
 ```
 ---
 ### 취소 버튼과 닫기 버튼 (취소 : 화면에 있는 모든걸 초기화 || 닫기 : 창 닫기)
