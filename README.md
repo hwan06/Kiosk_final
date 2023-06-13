@@ -389,3 +389,45 @@ String sql = "select idx, to_char(order_time, 'yyyy-mm-dd hh24:mi:ss'), count1, 
 						+ " order by idx";
             ps.setString(2, endDatePicker.getValue().plusDays(1).toString()); // 1일 더해주는 코드
 ```
+``` java
+if(IdTextField.getText().isEmpty() || PwPasswordField.getText().isEmpty()) {
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setContentText("모두입력해");
+			alert.show();
+		}else {
+			DBconnect DBconn = new DBconnect();
+			Connection conn = DBconn.getConnection();
+			
+			String sql = "select ADMIN_ID, ADMIN_PW"
+					+ " from admin_accounts"
+					+ " where ADMIN_ID = ? and ADMIN_PW = ?";
+			
+			try {
+				PreparedStatement ps = conn.prepareStatement(sql);
+				ps.setString(1, IdTextField.getText());
+				ps.setString(2, PwPasswordField.getText());
+				ResultSet rs = ps.executeQuery();
+				
+				if(rs.next()) {
+					try {
+						Parent root = FXMLLoader.load(getClass().getResource("Admindb.fxml"));
+						Scene scene = new Scene(root);
+						Stage stage = new Stage();
+						stage.setScene(scene);
+						stage.show();
+					} catch(Exception e) {
+						e.printStackTrace();
+					}
+			    
+				}else {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setContentText("틀렸습니다");
+					alert.show();
+				}
+								}
+				
+			 catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+```
