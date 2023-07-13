@@ -1,10 +1,12 @@
 # 성일정보 Kiosk 최종버전
-### [완성 화면]
+### [주문 화면]
 ![image](https://github.com/hwan06/Kiosk_final/assets/114748934/b367f22d-c0c5-429a-b7dd-cdf3b1632a57)
 ---
+### [관리자 로그인 화면]
 ![image](https://github.com/hwan06/Kiosk_final/assets/114748934/5e677dce-61ed-4c85-9211-e7136f3ba99c)
 ---
-![image](https://github.com/hwan06/Kiosk_final/assets/114748934/1c76f178-98d4-463e-bcc1-8a8e62f7c055)
+### [관리자 화면]
+![image](https://github.com/hwan06/Kiosk_final/assets/114748934/c3df197f-570e-4946-be1e-6f1c349763b9)
 ---
 ### [변수방]
 ---
