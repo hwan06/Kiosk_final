@@ -98,7 +98,7 @@ private int sum=0;
 ---
 ### [주문하기 버튼을 눌렀을 때 DB에 연결하여 주문내역을 DB에 저장하기위한 과정]
 
-#### DB에 접속하기 위한 클래스 생성
+#### 1.DB에 접속하기 위한 클래스 생성
 ``` java
 public class DBconnect {
 	
@@ -125,7 +125,7 @@ public class DBconnect {
 	}
 ```
 ---
-#### 총합계가 0이 아니면 DB접속 클래스를 호출하여 DB접속
+#### 2.총합계가 0이 아니면 DB접속 클래스를 호출하여 DB접속
 
 ``` java
 @FXML
@@ -140,7 +140,7 @@ public class DBconnect {
         	Connection conn2 = conn.getConnection();
  ```
  ---
-  #### DB에서 실행 할 SQL문 작성하고 ps에 SQL문을 저장
+  #### 3.DB에서 실행 할 SQL문 작성하고 ps에 SQL문을 저장
  ``` java
         				//--				sql문              --//
         	String sql = "insert into orderlist_accounts"
@@ -153,7 +153,7 @@ public class DBconnect {
 				PreparedStatement ps = conn2.prepareStatement(sql);
  ```
 ---
-#### SQL문의 ? 자리에 각 메뉴와 합계를 넣어준 뒤 rs에 SQL을 실행하여 나온 결과값을 저장 
+#### 4.SQL문의 ? 자리에 각 메뉴와 합계를 넣어준 뒤 rs에 SQL을 실행하여 나온 결과값을 저장 
 ``` java
 				ps.setInt(1, countm[0]); // 1번 ?에 들어갈 값
 				ps.setInt(2, countm[1]); // 2번 ?에 들어갈 값
@@ -163,7 +163,7 @@ public class DBconnect {
 ```
 ---
 
- ### rs에 저장된 값이 있다면 즉, SQL문이 실행이 되었다면 DB에 저장이 된것이기 때문에 "계산성공" 안내창 띄워주기 그리고 모든 변수방 초기화
+ ### 5.rs에 저장된 값이 있다면 즉, SQL문이 실행이 되었다면 DB에 저장이 된것이기 때문에 "계산성공" 안내창 띄워주기 그리고 모든 변수방 초기화
  ![image](https://github.com/hwan06/Kiosk_final/assets/114748934/d6acae83-caeb-41b6-9996-8a7feb38b7ca)
 
  ``` java
@@ -179,7 +179,7 @@ public class DBconnect {
 					}
   ```
   ---
- ### rs에 저장된 값이 없다면 SQL 오류 메시지 안내창 띄워주기 (코드상의 문제는 아님)
+ ### 6.rs에 저장된 값이 없다면 SQL 오류 메시지 안내창 띄워주기 (코드상의 문제는 아님)
  ``` java
 				}else { // 예상치 못한 하드웨어 오류시 메시지 출력
 					Alert alert = new Alert(AlertType.INFORMATION);
