@@ -18,7 +18,7 @@ private int sum=0;
 ---
 ### [+ 버튼을 눌렀을 때 메뉴 추가]
 ![image](https://github.com/hwan06/Kiosk_final/assets/114748934/b367f22d-c0c5-429a-b7dd-cdf3b1632a57)
-#### 메소드를 생성하여 +버튼을 누를때마다 count[n] +1 증가 // n == 메뉴 방 번호
+### 메소드를 생성하여 +버튼을 누를때마다 count[n] +1 증가시켜주는 코드 // n == 메뉴 방 번호
 ``` java
 @FXML
     public void M1pButtonAction(ActionEvent event) {
@@ -47,7 +47,7 @@ private int sum=0;
   ```
   ---
 ### [- 버튼을 눌렀을 때 메뉴 제거]
-#### countm[n]의 갯수가 0 이상이라면 -1 감소
+### countm[n]의 갯수가 0 이상이라면 -1 감소
 ``` java
  @FXML
     public void M1mButtonAction(ActionEvent event) {
