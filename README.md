@@ -6,7 +6,7 @@
 ![image](https://github.com/hwan06/Kiosk_final/assets/114748934/5e677dce-61ed-4c85-9211-e7136f3ba99c)
 ---
 ### [관리자 화면]
-![image](https://github.com/hwan06/Kiosk_final/assets/114748934/50729735-9f66-4568-92cc-9ff15c9df91c)
+![image](https://github.com/hwan06/Kiosk_final/assets/114748934/95f38c78-fbd2-4576-852b-ee99d4c0aa15)
 ---
 ### [변수방]
 ---
