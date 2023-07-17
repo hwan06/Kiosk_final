@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.admindbController">
+   <top>
+      <AnchorPane prefHeight="73.0" prefWidth="600.0" style="-fx-background-color: #ebffea;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="341.0" layoutY="14.0" text="★관리자 DB 조회★" textFill="#000000bd" textOverrun="CLIP">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="397.0" layoutY="59.0" text="&lt;주문 리스트 조회&gt;" textFill="#000000bd" textOverrun="CLIP">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="415.0" prefWidth="600.0" style="-fx-background-color: #fcffe3;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="20.0" layoutY="74.0" prefHeight="36.0" prefWidth="94.0" text="조회 날짜 입력">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dateDatePicker" layoutX="132.0" layoutY="75.0" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #a9e8d4;" />
+            <Button fx:id="datesearchButton" layoutX="290.0" layoutY="70.0" mnemonicParsing="false" onAction="#datesearchButtonAction" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #a9e8d4;" text="날짜 조회" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="searchButton" layoutX="290.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchButtonAction" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #e8bce2;" text="전체 조회" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="473.0" layoutY="14.0" prefHeight="36.0" prefWidth="68.0" text="&lt;통계&gt;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TableView fx:id="orderlistTableView" layoutX="19.0" layoutY="203.0" prefHeight="169.0" prefWidth="402.0">
+              <columns>
+                <TableColumn fx:id="idxTableColumn" prefWidth="52.0" text="주문번호" />
+                <TableColumn fx:id="dateTableColumn" prefWidth="111.0" text="주문일시" />
+                  <TableColumn fx:id="count1TableColumn" prefWidth="64.0" text="아메리카노" />
+                  <TableColumn fx:id="count2TableColumn" prefWidth="55.0" text="카푸치노" />
+                  <TableColumn fx:id="count3TableColumn" prefWidth="56.0" text="카페라떼" />
+                  <TableColumn fx:id="sumTableColumn" prefWidth="63.0" text="합계" />
+              </columns>
+            </TableView>
+            <TextArea fx:id="resultTextArea" layoutX="433.0" layoutY="53.0" prefHeight="321.0" prefWidth="148.0" />
+            <Label layoutX="21.0" layoutY="123.0" prefHeight="36.0" prefWidth="94.0" text="시작 날짜 입력">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="159.0" prefHeight="36.0" prefWidth="105.0" text="마지막 날짜 입력">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="startDatePicker" layoutX="132.0" layoutY="123.0" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #e1a4a4;" />
+            <DatePicker fx:id="endDatePicker" layoutX="132.0" layoutY="160.0" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #e1a4a4;" />
+            <Button fx:id="datesearch2Button" layoutX="290.0" layoutY="138.0" mnemonicParsing="false" onAction="#datesearch2ButtonAction" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: #e1a4a4;" text="기간별 조회" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="693.0" layoutY="16.0" text="㈜ 메뉴별 그래프">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Button fx:id="countButton" layoutX="625.0" layoutY="70.0" mnemonicParsing="false" onAction="#countButtonAction" prefHeight="41.0" prefWidth="153.0" text="판매 수량 그래프">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="sumButton" layoutX="813.0" layoutY="70.0" mnemonicParsing="false" onAction="#sumButtonAction" prefHeight="41.0" prefWidth="153.0" text="판매 금액 그래프">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <PieChart fx:id="rsPieChart" layoutX="600.0" layoutY="123.0" prefHeight="251.0" prefWidth="381.0" style="-fx-background-color: #fff0f0;" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>
