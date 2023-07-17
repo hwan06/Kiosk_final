@@ -299,7 +299,7 @@ if(rs.next()) {
 ```
 ---
 
-### 이니셜라이즈를 이용하여 코드가 실행되는 순간 바로 실행 DB연동을 통한 테이블의 열에 데이터 삽입
+### 이니셜라이즈를 이용하여 코드가 실행되는 순간 테이블 초기화
 ``` java
 public void initialize(URL arg0, ResourceBundle arg1) {
 			
